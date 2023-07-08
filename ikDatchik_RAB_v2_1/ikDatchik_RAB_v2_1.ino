@@ -29,6 +29,7 @@ Blink();
 break;
 case 0x1010:
 stop = stop;
+Blink();
 break;
 case 0x1811:
 pauseMil();
@@ -46,18 +47,19 @@ void Blink() {
    // delay (5000);
   }
   while (int n = stop){
- /* digitalWrite( Relay, HIGH );
-delay(1000);
-digitalWrite( Relay, LOW );
-delay(1000); 
-*/
+ digitalWrite( Relay, HIGH );
+delay(3000);
+
+
 if (milState == !milState) {
 pauseMil();
 }
-if (stop == stop) {n==stop;
-
-} 
+if (stop != stop) {n==stop;
  break;
+} 
+digitalWrite( Relay, LOW );
+delay(3000); 
+
  }
 }
 void pauseMil() {
@@ -76,6 +78,8 @@ void pauseMil() {
  
     // устанавливаем состояния выхода, чтобы включить или выключить светодиод
     digitalWrite(Relay, RelayState);
-    milState = true;
+    milState = milState;
+      return 66;
   }
+
 }
